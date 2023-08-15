@@ -84,7 +84,7 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm) => {
     $.ajax({
-      url: `/questions`, //TODO: update request URL
+      url: `/questions/search`, //DONE: update request URL
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -128,8 +128,8 @@ class QuestionView extends Component {
 
   render() {
     return (
-      <div className='question-view'>
-        <div className='categories-list'>
+      <div className="question-view">
+        <div className="categories-list">
           <h2
             onClick={() => {
               this.getQuestions();
@@ -147,7 +147,7 @@ class QuestionView extends Component {
               >
                 {this.state.categories[id]}
                 <img
-                  className='category'
+                  className="category"
                   alt={`${this.state.categories[id].toLowerCase()}`}
                   src={`${this.state.categories[id].toLowerCase()}.svg`}
                 />
@@ -156,7 +156,7 @@ class QuestionView extends Component {
           </ul>
           <Search submitSearch={this.submitSearch} />
         </div>
-        <div className='questions-list'>
+        <div className="questions-list">
           <h2>Questions</h2>
           {this.state.questions.map((q, ind) => (
             <Question
@@ -168,7 +168,7 @@ class QuestionView extends Component {
               questionAction={this.questionAction(q.id)}
             />
           ))}
-          <div className='pagination-menu'>{this.createPagination()}</div>
+          <div className="pagination-menu">{this.createPagination()}</div>
         </div>
       </div>
     );
