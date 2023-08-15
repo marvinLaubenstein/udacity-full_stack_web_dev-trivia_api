@@ -71,24 +71,196 @@ One note before you delve into your tasks: for each endpoint, you are expected t
 
 You will need to provide detailed documentation of your API endpoints including the URL, request parameters, and the response body. Use the example below as a reference.
 
-### Documentation Example
+## API Documentation
 
-`GET '/api/v1.0/categories'`
+<details>
+ <summary><code>POST</code> <code>'/api/v1.0/categories'</code></summary>
 
-- Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
-- Request Arguments: None
-- Returns: An object with a single key, `categories`, that contains an object of `id: category_string` key: value pairs.
+  - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+  - Request Arguments: None
+  - Returns: An object with a single key, `categories`, that contains an object of `id: category_string` key: value pairs.
 
-```json
+  ```json
+  {
+    "1": "Science",
+    "2": "Art",
+    "3": "Geography",
+    "4": "History",
+    "5": "Entertainment",
+    "6": "Sports"
+  }
+  ```
+
+</details>
+<details>
+ <summary><code>GET</code> <code>'/categories'</code></summary>
+
+  - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+  - Request Arguments: None
+  - Returns: An object with a single key, categories, that contains an object of id: category_string key:value pairs.
+
+
+ ```json
 {
-  "1": "Science",
-  "2": "Art",
-  "3": "Geography",
-  "4": "History",
-  "5": "Entertainment",
-  "6": "Sports"
+   "categories":
+   {
+     "1" : "Science",
+     "2" : "Art",
+     "3" : "Geography",
+     "4" : "History",
+     "5" : "Entertainment",
+     "6" : "Sports"
+   }
 }
 ```
+
+
+</details>
+<details>
+ <summary><code>GET</code> <code>'/questions?page=${integer}'</code></summary>
+
+  - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+  - Request Arguments: None
+  - Returns: An object with a single key, categories, that contains an object of id: category_string key:value pairs.
+
+
+ ```json
+{
+   "questions": [
+     {
+       "id": 1,
+       "question": "This is a question",
+       "answer": "This is an answer",
+       "difficulty": 5,
+       "category": 2
+     },
+   ],
+   "totalQuestions": 100,
+   "categories":
+     {
+       "1" : "Science",
+       "2" : "Art",
+       "3" : "Geography",
+       "4" : "History",
+       "5" : "Entertainment",
+       "6" : "Sports"
+     },
+    "currentCategory": "History"
+}
+```
+  
+</details>
+<details>
+ <summary><code>GET</code> <code>'/categories/${id}/questions'</code></summary>
+  
+ - Fetches questions for a cateogry specified by id request argument
+ - Request Arguments: id - integer
+ - Returns: An object with questions for the specified category, total questions, and current category string
+  
+  ```json
+  {
+    "questions":[
+      {
+        "id":1,
+        "question": "This is a question",
+        "answer": "This is an answer",
+        "difficulty": 5,
+        "category": 4
+      },
+    ],
+    "totalQuestions": 100,
+    "currentCategory": "History"
+  }
+  ```
+</details>
+<details>
+ <summary><code>DELETE</code> <code>'/questions/${id}'</code></summary>
+
+  - Deletes a specified question using the id of the question
+  - Request Arguments: id - integer
+  - Returns: Does not need to return anything besides the appropriate HTTP status code. Optionally can return the id of the question. If you are       able to modify the frontend, you can have it remove the question using the id instead of refetching the questions.
+  
+</details>
+<details>
+ <summary><code>POST</code> <code>'/quizzes'</code></summary>
+
+  - Sends a post request in order to get the next question
+  - Request Body:
+    
+ ```json
+  {
+    "previous_questions": [1, 4, 20, 15]
+    "quiz_category": "current category"
+   }
+  ```
+  - Returns: a single new question object
+
+   ```json
+  {
+    "question": {
+        "id": 1,
+        "question": "This is a question",
+        "answer": "This is an answer",
+        "difficulty": 5,
+        "category": 4
+    }
+}
+  ``` 
+    
+  
+</details>
+<details>
+ <summary><code>POST</code> <code>'/questions'</code></summary>
+
+  - Sends a post request in order to add a new question
+  - Request Body:
+    
+ ```json
+    {
+      "question":  "Heres a new question string",
+      "answer":  "Heres a new answer string",
+      "difficulty": 1,
+      "category": 3,
+    }
+   ```
+  - Returns: Does not return any new data
+  
+</details>
+<details>
+ <summary><code>POST</code> <code>'/questions'</code></summary>
+
+  - Sends a post request in order to search for a specific question by search term
+  - Request Body:
+
+    
+  ```json
+    {
+      "searchTerm": "this is the term the user is looking for"
+    }
+  ```
+
+  - Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
+
+
+  ```json
+    {
+      "questions": [
+        {
+          "id": 1,
+          "question": "This is a question",
+          "answer": "This is an answer",
+          "difficulty": 5,
+          "category": 5
+        },
+      ],
+      "totalQuestions": 100,
+      "currentCategory": "Entertainment"
+    }
+  ```
+  
+</details>
+
+
 
 ## Testing
 
