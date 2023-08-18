@@ -1,4 +1,6 @@
-# API Development and Documentation Final Project
+# API Development and Documentation Final Project (Udacity)
+
+## This project is my variant of the API Development and Documentation final project created for Udacity's Full Stack Web Developer course. This application is intended to show a small basic quiz. The frontend was provided by Udacity and is therefore a bit unfinished. The main part of my code can be found under the DONE comments. 
 
 ## Trivia App
 
