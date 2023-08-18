@@ -2,6 +2,69 @@
 
 #### This project is my variant of the API Development and Documentation final project created for Udacity's Full Stack Web Developer course. This application is intended to show a small basic quiz. The frontend was provided by Udacity and is therefore a bit unfinished. The main part of my code can be found under the 'DONE' comments. 
 
+## Installation
+
+How to start the application:
+
+- Install all required project dependencies
+```sh
+npm i
+```
+- Start the Development Server
+```sh
+npm start
+```
+
+### Load the Backend 
+
+How to start the backend related processes
+
+- Install all required backend dependencies
+```sh
+pip install -r requirements.txt
+```
+
+- Start the Server
+```sh
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run
+```
+
+## Application Overview 
+
+## Dashboard List (/)
+All quiz questions at a glance
+
+![Screenshot 2023-08-18 at 11 23 44](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/d58a066d-f49d-492b-9e9e-e6c8bea16332)
+
+## Create Question Page (/add)
+Create a new question for the quiz
+
+![Screenshot 2023-08-18 at 11 24 06](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/14c2cc7f-c7b0-456d-b9ab-9651357fdc5b)
+
+## Start the Quiz Page (/play)
+Choose a quiz category 
+
+![Screenshot 2023-08-18 at 11 24 19](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/80c12208-bf9e-464a-969c-62bc1fd908d3)
+
+Start answering the quiz questions...
+
+![Screenshot 2023-08-18 at 11 24 49](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/c1b63d1e-f60d-4509-bede-3920cd7bced9)
+
+... and continue
+
+![Screenshot 2023-08-18 at 11 24 58](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/d3d073f8-ff7e-4fd8-9e79-b83aaf088d74)
+
+## Database Structure 
+## Questions Table
+
+![Screenshot 2023-08-18 at 11 46 36](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/0e93eaac-5272-475b-8394-735caddf9852)
+
+## Categories Table
+
+![Screenshot 2023-08-18 at 11 46 13](https://github.com/marvinLaubenstein/udacity-full_stack_web_dev-trivia_api/assets/82942834/55c2d889-419b-4a45-89bd-b1c955f1be83)
+
 ## Trivia App
 
 Udacity is invested in creating bonding experiences for its employees and students. A bunch of team members got the idea to hold trivia on a regular basis and created a webpage to manage the trivia app and play the game, but their API experience is limited and still needs to be built out.
