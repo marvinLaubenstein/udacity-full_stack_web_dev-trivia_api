@@ -16,7 +16,7 @@ class FormView extends Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/categories`, //TODO: update request URL
+      url: `/categories`, //DONE: update request URL
       type: 'GET',
       success: (result) => {
         this.setState({ categories: result.categories });
@@ -32,7 +32,7 @@ class FormView extends Component {
   submitQuestion = (event) => {
     event.preventDefault();
     $.ajax({
-      url: '/questions', //TODO: update request URL
+      url: '/questions', //DONE: update request URL
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -63,34 +63,34 @@ class FormView extends Component {
 
   render() {
     return (
-      <div id='add-form'>
+      <div id="add-form">
         <h2>Add a New Trivia Question</h2>
         <form
-          className='form-view'
-          id='add-question-form'
+          className="form-view"
+          id="add-question-form"
           onSubmit={this.submitQuestion}
         >
           <label>
             Question
-            <input type='text' name='question' onChange={this.handleChange} />
+            <input type="text" name="question" onChange={this.handleChange} />
           </label>
           <label>
             Answer
-            <input type='text' name='answer' onChange={this.handleChange} />
+            <input type="text" name="answer" onChange={this.handleChange} />
           </label>
           <label>
             Difficulty
-            <select name='difficulty' onChange={this.handleChange}>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
+            <select name="difficulty" onChange={this.handleChange}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </label>
           <label>
             Category
-            <select name='category' onChange={this.handleChange}>
+            <select name="category" onChange={this.handleChange}>
               {Object.keys(this.state.categories).map((id) => {
                 return (
                   <option key={id} value={id}>
@@ -100,7 +100,7 @@ class FormView extends Component {
               })}
             </select>
           </label>
-          <input type='submit' className='button' value='Submit' />
+          <input type="submit" className="button" value="Submit" />
         </form>
       </div>
     );
